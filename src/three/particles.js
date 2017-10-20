@@ -101,7 +101,7 @@ class Particle {
 			x: '0',
 			y: '-30'
 		}).delay(delay*6+delay/2);
-		this.circlePoints(num);
+		// this.circlePoints(num);
 
 	}
 

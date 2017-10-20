@@ -6,12 +6,26 @@ import Particles from './particles';
 import Lights from './lights';
 import './index.css';
 
+const audio = document.querySelector('#music');
+const audioPlayer = document.querySelector('#audioPlayer');
+audio.play();
+
+audioPlayer.onclick = () => {
+    if(!audio.paused) {
+        audio.pause();
+        audioPlayer.classList.remove("soundPlaying");
+    }else {
+        audio.play();
+        audioPlayer.classList.add("soundPlaying");
+    }
+}
+
 // attach orbit controls to THREE
 const OrbitControls = threeOrbitControls(THREE);
 
 // stats
-const stats = new Stats();
-document.body.appendChild(stats.domElement);
+// const stats = new Stats();
+// document.body.appendChild(stats.domElement);
 
 // scene, renderer, camera, mesh (geometry + material)
 const renderer = new THREE.WebGLRenderer({
@@ -59,10 +73,10 @@ const animate = timestamp => {
 		loadAnimation();
         animation = false;
     }
-    stats.begin();
+    // stats.begin();
 
     renderer.render(scene, camera);
-    stats.end();
+    // stats.end();
     requestAnimationFrame(animate);
 };
 animate();

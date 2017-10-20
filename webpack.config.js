@@ -28,6 +28,17 @@ module.exports = {
                 use: [
                     'file-loader'
                 ]
+            },
+            {
+                test: /\.(mp3|ogg|aac|flac)$/,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {
+                            name: "assets/sounds/[name].[ext]",
+                        }
+                    }
+                ]
             }
         ]
     },

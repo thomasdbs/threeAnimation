@@ -48,15 +48,21 @@ class Particle {
 		return Math.sin(angle)*radius;
 	}
 
-	move(random) {
+	move() {
+    const angle = Math.random() * Math.PI * 2;
+    const minCircle = 20;
+    const maxCircle = 40;
+    const radius = minCircle + Math.random() * (maxCircle - minCircle);
 
-		this.group.children.forEach(c => {
-			TweenMax.to(c.position, 5, {
-				x: this.randomCos(20,40, random),
-				y: this.randomSin(20,40, random)
-			});
-		});
-	}
+    TweenMax.to(this.group.position, 5, {
+        x: () => {
+            return Math.cos(angle) * radius;
+        },
+        y: () => {
+            return Math.sin(angle) * radius;
+        },
+    });
+}
 
 }
 

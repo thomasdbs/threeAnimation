@@ -42,10 +42,9 @@ scene.add(particles.group);
 
 function loadAnimation() {
     let i = 0;
-    const random = Math.random();
     const interval = setInterval(() => {
         if (i <= 400) {
-            particles.particles[i].move(random);
+            particles.particles[i].move();
             i++;
         } else clearInterval(interval);
     }, 10);

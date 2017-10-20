@@ -3,6 +3,7 @@ import TweenMax from 'gsap';
 import threeOrbitControls from './utils/OrbitControls';
 import Stats from 'stats.js';
 import Particles from './particles';
+import Lights from './lights';
 import './index.css';
 
 // attach orbit controls to THREE
@@ -25,12 +26,12 @@ document.body.appendChild(renderer.domElement);
 const scene = new THREE.Scene();
 
 //Lumiere ambiante
-const light = new THREE.AmbientLight(0x888888);
+const light = new THREE.AmbientLight(0xE7E7E7);
 scene.add(light);
 
 //Camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200);
-camera.position.set(0, 0, 100);
+camera.position.set(0, 0, 50);
 
 // controls
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -43,8 +44,8 @@ scene.add(particles.group);
 function loadAnimation() {
     let i = 0;
     const interval = setInterval(() => {
-        if (i <= 400) {
-            particles.particles[i].circlePoints();
+        if (i <= 300) {
+            particles.particles[i].circlePoints(i);
             i++;
         } else clearInterval(interval);
     }, 10);

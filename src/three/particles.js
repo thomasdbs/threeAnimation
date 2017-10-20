@@ -27,66 +27,83 @@ class Particle {
 	}
 
 	circlePoints(num) {
-    const angle = Math.random() * Math.PI * 2;
-    const minCircle = 15;
-    const maxCircle = 35;
-    const radius = minCircle + Math.random() * (maxCircle - minCircle);
-	let delay = 8;
+		const angle = Math.random() * Math.PI * 2;
+		const minCircle = 15;
+		const maxCircle = 35;
+		const radius = minCircle + Math.random() * (maxCircle - minCircle);
+		let delay = 8;
 
-    TweenMax.to(this.group.position, 5, {
-        x: () => {
-            return Math.cos(angle) * radius;
-        },
-        y: () => {
-            return Math.sin(angle) * radius;
-        },
-    });
-	TweenMax.to(this.group.position, 5, {
-        x: () => {
-            return Math.cos(angle) * minCircle;
-        },
-        y: () => {
-            return Math.sin(angle) * minCircle;
-        },
-    }).delay(delay);
-	TweenMax.to(this.group.position, 5, {
-        x: () => {
-            return Math.cos(angle) * maxCircle;
-        },
-        y: () => {
-            return Math.sin(angle) * maxCircle;
-        },
-    }).delay(delay*2);
-	TweenMax.to(this.group.position, 5, {
-        x: () => {
-            return Math.cos(angle) * radius;
-        },
-        y: () => {
-            return Math.sin(angle) * radius;
-        },
-    }).delay(delay*3);
+		TweenMax.to(this.group.position, 5, {
+			x: () => {
+				return Math.cos(angle) * radius;
+			},
+			y: () => {
+				return Math.sin(angle) * radius;
+			},
+		});
+		TweenMax.to(this.group.position, 5, {
+			x: () => {
+				return Math.cos(angle) * minCircle;
+			},
+			y: () => {
+				return Math.sin(angle) * minCircle;
+			},
+		}).delay(delay);
+		TweenMax.to(this.group.position, 5, {
+			x: () => {
+				return Math.cos(angle) * maxCircle;
+			},
+			y: () => {
+				return Math.sin(angle) * maxCircle;
+			},
+		}).delay(delay*2);
+		TweenMax.to(this.group.position, 5, {
+			x: () => {
+				return Math.cos(angle) * radius;
+			},
+			y: () => {
+				return Math.sin(angle) * radius;
+			},
+		}).delay(delay*3);
 
-	if (num%2 == 0) {
+		if (num%2 == 0) {
+			TweenMax.to(this.group.position, 5, {
+				x: () => {
+					return Math.cos(angle) * minCircle;
+				},
+				y: () => {
+					return Math.sin(angle) * minCircle;
+				},
+			}).delay(delay*4);
+		}else {
+			TweenMax.to(this.group.position, 5, {
+				x: () => {
+					return Math.cos(angle) * maxCircle;
+				},
+				y: () => {
+					return Math.sin(angle) * maxCircle;
+				},
+			}).delay(delay*4);
+		}
 		TweenMax.to(this.group.position, 5, {
-	        x: () => {
-	            return Math.cos(angle) * minCircle;
-	        },
-	        y: () => {
-	            return Math.sin(angle) * minCircle;
-	        },
-	    }).delay(delay*4);
-	}else {
+			x: '50',
+			y: '0'
+		}).delay(delay*5);
 		TweenMax.to(this.group.position, 5, {
-	        x: () => {
-	            return Math.cos(angle) * maxCircle;
-	        },
-	        y: () => {
-	            return Math.sin(angle) * maxCircle;
-	        },
-	    }).delay(delay*4);
+			x: '0',
+			y: '30'
+		}).delay(delay*5+delay/2);
+		TweenMax.to(this.group.position, 5, {
+			x: '-50',
+			y: '0'
+		}).delay(delay*6);
+		TweenMax.to(this.group.position, 5, {
+			x: '0',
+			y: '-30'
+		}).delay(delay*6+delay/2);
+		this.circlePoints(num);
+
 	}
-
-}
 
 }
 

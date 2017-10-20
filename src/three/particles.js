@@ -32,19 +32,28 @@ class Particle {
 		return (num >= minExcluded && num <= maxExcluded) ? this.randomNumberExcluding(min, max, minExcluded, maxExcluded) : num;
 	}
 
-	move(random) {
-		const angle = random * Math.PI*2;
+	randomCos(min, max, random){
+		const angle = Math.random() * Math.PI*2;
 		const minCircle = 20;
 		const maxCircle = 40;
-		const radius = minCircle + random * (maxCircle - minCircle);
+		const radius = minCircle + Math.random() * (maxCircle - minCircle);
+		return Math.cos(angle)*radius;
+	}
+
+	randomSin(min, max, random){
+		const angle = Math.random() * Math.PI*2;
+		const minCircle = 20;
+		const maxCircle = 40;
+		const radius = minCircle + Math.random() * (maxCircle - minCircle);
+		return Math.sin(angle)*radius;
+	}
+
+	move(random) {
+
 		this.group.children.forEach(c => {
 			TweenMax.to(c.position, 5, {
-				x: () => {
-					return Math.cos(angle)*radius;
-				},
-				y: () => {
-					return Math.sin(angle)*radius;
-				}
+				x: this.randomCos(20,40, random),
+				y: this.randomSin(20,40, random)
 			});
 		});
 	}

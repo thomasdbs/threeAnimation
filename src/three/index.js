@@ -30,7 +30,7 @@ scene.add(light);
 
 //Camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200);
-camera.position.set(0, 30, 100);
+camera.position.set(0, 0, 100);
 
 // controls
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -44,10 +44,11 @@ function loadAnimation() {
     let i = 0;
     const interval = setInterval(() => {
         if (i <= 400) {
-            particles.particles[i].move();
+            particles.particles[i].circlePoints();
             i++;
         } else clearInterval(interval);
     }, 10);
+
 }
 
 let animation = true;

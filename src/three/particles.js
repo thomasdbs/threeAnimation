@@ -24,7 +24,7 @@ class Particle {
 		// const test = Math.random() * angle;
 		this.group.add(up);
 		// this.group.position.set(Math.cos(test)*radius, Math.sin(test)*radius, Math.random()*4);
-		this.group.position.set(this.randomNumberExcluding(-30,30,-10,10), this.randomNumberExcluding(-30,30,-10,10), Math.random()*4);
+		this.group.position.set(this.randomNumberExcluding(-100,100,-50,50), this.randomNumberExcluding(-60,60,-30,30), Math.random()*2);
 	}
 
 	randomNumberExcluding(min, max, minExcluded, maxExcluded) {
@@ -32,26 +32,10 @@ class Particle {
 		return (num >= minExcluded && num <= maxExcluded) ? this.randomNumberExcluding(min, max, minExcluded, maxExcluded) : num;
 	}
 
-	randomCos(min, max, random){
-		const angle = Math.random() * Math.PI*2;
-		const minCircle = 20;
-		const maxCircle = 40;
-		const radius = minCircle + Math.random() * (maxCircle - minCircle);
-		return Math.cos(angle)*radius;
-	}
-
-	randomSin(min, max, random){
-		const angle = Math.random() * Math.PI*2;
-		const minCircle = 20;
-		const maxCircle = 40;
-		const radius = minCircle + Math.random() * (maxCircle - minCircle);
-		return Math.sin(angle)*radius;
-	}
-
-	move() {
+	circlePoints() {
     const angle = Math.random() * Math.PI * 2;
     const minCircle = 20;
-    const maxCircle = 40;
+    const maxCircle = 50;
     const radius = minCircle + Math.random() * (maxCircle - minCircle);
 
     TweenMax.to(this.group.position, 5, {
@@ -62,6 +46,30 @@ class Particle {
             return Math.sin(angle) * radius;
         },
     });
+	TweenMax.to(this.group.position, 5, {
+        x: () => {
+            return Math.cos(angle) * minCircle;
+        },
+        y: () => {
+            return Math.sin(angle) * minCircle;
+        },
+    }).delay(8);
+	TweenMax.to(this.group.position, 5, {
+        x: () => {
+            return Math.cos(angle) * maxCircle;
+        },
+        y: () => {
+            return Math.sin(angle) * maxCircle;
+        },
+    }).delay(16);
+	TweenMax.to(this.group.position, 5, {
+        x: () => {
+            return Math.cos(angle) * radius;
+        },
+        y: () => {
+            return Math.sin(angle) * radius;
+        },
+    }).delay(24);
 }
 
 }

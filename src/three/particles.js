@@ -33,6 +33,7 @@ class Particle {
 		const radius = minCircle + Math.random() * (maxCircle - minCircle);
 		let delay = 8;
 
+		//Random position entre 2 cercles
 		TweenMax.to(this.group.position, 5, {
 			x: () => {
 				return Math.cos(angle) * radius;
@@ -41,6 +42,7 @@ class Particle {
 				return Math.sin(angle) * radius;
 			},
 		});
+		//Random position sur le petit cercle
 		TweenMax.to(this.group.position, 5, {
 			x: () => {
 				return Math.cos(angle) * minCircle;
@@ -49,6 +51,7 @@ class Particle {
 				return Math.sin(angle) * minCircle;
 			},
 		}).delay(delay);
+		//Random position sur le grand cercle
 		TweenMax.to(this.group.position, 5, {
 			x: () => {
 				return Math.cos(angle) * maxCircle;
@@ -57,6 +60,7 @@ class Particle {
 				return Math.sin(angle) * maxCircle;
 			},
 		}).delay(delay*2);
+		//Random position entre les 2 cercles
 		TweenMax.to(this.group.position, 5, {
 			x: () => {
 				return Math.cos(angle) * radius;
@@ -65,8 +69,9 @@ class Particle {
 				return Math.sin(angle) * radius;
 			},
 		}).delay(delay*3);
-
+		//Si nombre pair
 		if (num%2 == 0) {
+			//Random position sur le petit cercle
 			TweenMax.to(this.group.position, 5, {
 				x: () => {
 					return Math.cos(angle) * minCircle;
@@ -75,7 +80,10 @@ class Particle {
 					return Math.sin(angle) * minCircle;
 				},
 			}).delay(delay*4);
-		}else {
+		}
+		//Si nombre impair
+		else {
+			//Random position sur le grand cercle
 			TweenMax.to(this.group.position, 5, {
 				x: () => {
 					return Math.cos(angle) * maxCircle;
@@ -85,23 +93,70 @@ class Particle {
 				},
 			}).delay(delay*4);
 		}
+		//Vers un point à droite de l'écran
 		TweenMax.to(this.group.position, 5, {
 			x: '50',
 			y: '0'
 		}).delay(delay*5);
+		//Vers un point en haut de l'écran
 		TweenMax.to(this.group.position, 5, {
 			x: '0',
 			y: '30'
 		}).delay(delay*5+delay/2);
+		//Vers un point à gauche de l'écran
 		TweenMax.to(this.group.position, 5, {
 			x: '-50',
 			y: '0'
 		}).delay(delay*6);
+		//Vers un point en bas de l'écran
 		TweenMax.to(this.group.position, 5, {
 			x: '0',
 			y: '-30'
 		}).delay(delay*6+delay/2);
-		// this.circlePoints(num);
+		//Si nombre pair
+		if (num%2 == 0) {
+			//Vers un point à droite de l'écran
+			TweenMax.to(this.group.position, 5, {
+				x: '50',
+				y: '0'
+			}).delay(delay*7);
+			//Vers un point en haut de l'écran
+			TweenMax.to(this.group.position, 5, {
+				x: '0',
+				y: '30'
+			}).delay(delay*7+delay/2);
+			//Random position sur le petit cercle
+			TweenMax.to(this.group.position, 5, {
+				x: () => {
+					return Math.cos(angle) * minCircle;
+				},
+				y: () => {
+					return Math.sin(angle) * minCircle;
+				},
+			}).delay(delay*8);
+		}
+		//Si nombre impair
+		else {
+			//Vers un point à gauche de l'écran
+			TweenMax.to(this.group.position, 5, {
+				x: '-50',
+				y: '0'
+			}).delay(delay*7);
+			//Vers un point en haut de l'écran
+			TweenMax.to(this.group.position, 5, {
+				x: '0',
+				y: '30'
+			}).delay(delay*7+delay/2);
+			//Random position entre les 2 cercles
+			TweenMax.to(this.group.position, 5, {
+				x: () => {
+					return Math.cos(angle) * radius;
+				},
+				y: () => {
+					return Math.sin(angle) * radius;
+				},
+			}).delay(delay*8);
+		}
 
 	}
 

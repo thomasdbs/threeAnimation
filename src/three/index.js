@@ -6,6 +6,7 @@ import Particles from './particles';
 import Lights from './lights';
 import './index.css';
 
+
 const audio = document.querySelector('#music');
 const audioPlayer = document.querySelector('#audioPlayer');
 audio.play();
@@ -66,6 +67,7 @@ function loadAnimation() {
 
 }
 
+let hsl = 0;
 let animation = true;
 const animate = timestamp => {
 
@@ -73,7 +75,15 @@ const animate = timestamp => {
 		loadAnimation();
         animation = false;
     }
+    if (hsl <=360) {
+        document.querySelector('.psoload .center').style.borderColor=`hsl(${hsl},50%,80%)`;
+        hsl+=0.5;
+    }else {
+        hsl = 0;
+    }
     // stats.begin();
+    var x = document.readyState;
+    document.getElementById("chargement").innerHTML = x;
 
     renderer.render(scene, camera);
     // stats.end();

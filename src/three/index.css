@@ -8,13 +8,13 @@ body {
 
 @keyframes arrow-spin {
     100% {
-        transform: rotate(179deg);
+        transform: rotate(180deg);
     }
 }
 
 @-webkit-keyframes arrow-spin {
     100% {
-        -webkit-transform: rotate(179deg);
+        -webkit-transform: rotate(180deg);
     }
 }
 
@@ -42,7 +42,7 @@ body {
     width: 60%;
     height: 60%;
     border-radius: 100%;
-    border: 3px solid #eee;
+    border: 3px solid #FFFFFF;
 }
 
 .psoload .inner {
@@ -64,19 +64,19 @@ body {
     height: 0;
     border: 6px solid transparent;
     border-bottom-width: 11px;
-    border-bottom-color: #eee;
+    border-bottom-color: #FFFFFF;
 }
 
 .psoload .inner:before {
-    top: 12px;
-    left: 12px;
+    top: 9px;
+    left: 10px;
     transform: rotate(128deg);
     -webkit-transform: rotate(128deg);
 }
 
 .psoload .inner:after {
-    bottom: 12px;
-    right: 12px;
+    bottom: 9px;
+    right: 10px;
     transform: rotate(-48deg);
     -webkit-transform: rotate(-48deg);
 }
@@ -86,7 +86,7 @@ body {
     width: 24px;
     height: 24px;
     background-color: transparent;
-    box-shadow: inset 0px 0px 0px 2px #fff;
+    box-shadow: inset 0px 0px 0px 2px #FFFFFF;
     border-radius: 50%;
     position: absolute;
     top: 30px;
@@ -95,7 +95,7 @@ body {
 .sound:after, .sound:before{
     position: absolute;
     content:"";
-    background-color: #fff;
+    background-color: #FFFFFF;
 }
 .sound:after{
     width: 10px;

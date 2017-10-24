@@ -3,17 +3,54 @@
 <head>
     <meta charset="utf-8">
     <title>Three JS animation for portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline" rel="stylesheet">
 </head>
 <body>
-    <p id="chargement"></p>
-    <div class="psoload">
-        <div class="center"></div>
-        <div class="inner"></div>
+    <div class="navbar fixed">
+
+        <div class="psoload">
+            <div class="center"></div>
+            <div class="inner"></div>
+        </div>
+        <div id="audioPlayer" class="sound soundPlaying pointer"></div>
+        <audio id="music">
+            <source src="music/strobe.mp3" type="audio/mpeg" />
+        </audio>
     </div>
-    <div id="audioPlayer" class="sound soundPlaying"></div>
-    <audio id="music">
-        <source src="music/strobe.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-    </audio>
+
+    <h1 class="texte auteur white">Thomas Dubois</h1>
+    <p class="texte competence white">front_dev</p>
+
+    <div class="projet">
+        <h2 class="texte nomProjet white">Nom du projet</h2>
+        <div class="middle" id="projectDetail">
+            <p class="white center pointer" >Création d'un site web<br>Awwwards<br>+</p>
+            <div id="projectDescription" class="white display">
+                <h4>Test</h4>
+                <p>
+                    Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
+                    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla
+                    ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.
+                    Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique,
+                    sans que son contenu n'en soit modifié.
+                    Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum,
+                    et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
+                </p>
+                <h4>Test 2</h4>
+                <p>ceci est le deuxième test</p>
+                <p class="button">FERMER</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="liens">
+        <a href="#" title="Codepen profil">
+            <img class="codepen" src="img/codepen.png" alt="Logo codepen">
+        </a>
+        <a href="#" title="Github profil">
+            <img class="github" src="img/github.png" alt="Logo github">
+        </a>
+    </div>
+    <div id="colorPlayer" class="loader7 pointer"></div>
 <script type="text/javascript" src="bundle.js"></script></body>
 </html>

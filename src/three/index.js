@@ -6,11 +6,21 @@ import Particles from './particles';
 import Lights from './lights';
 import './index.css';
 
-
+const projectDetail = document.querySelector('#projectDetail');
+const projectDescription = document.querySelector('#projectDescription');
+const colorPlayer = document.querySelector('#colorPlayer');
 const audio = document.querySelector('#music');
 const audioPlayer = document.querySelector('#audioPlayer');
-audio.play();
+const competence = document.querySelector('.competence');
 
+
+let changeColor = 0;
+colorPlayer.onclick = () => {
+    (changeColor == 0) ? changeColor = 1 : changeColor = 0;
+}
+
+
+audio.play();
 audioPlayer.onclick = () => {
     if(!audio.paused) {
         audio.pause();
@@ -22,7 +32,7 @@ audioPlayer.onclick = () => {
 }
 
 // attach orbit controls to THREE
-const OrbitControls = threeOrbitControls(THREE);
+// const OrbitControls = threeOrbitControls(THREE);
 
 // stats
 // const stats = new Stats();
@@ -48,8 +58,52 @@ scene.add(light);
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 200);
 camera.position.set(0, 0, 50);
 
+let touchableProject = true;
+projectDetail.style.width=`80%`;
+projectDetail.style.marginLeft=`10%`;
+projectDetail.style.marginRight=`10%`;
+projectDetail.style.left=`0`;
+projectDetail.onclick = () => {
+
+    if (touchableProject == true) {
+        TweenMax.to(camera.position, 3, {
+            x: '0',
+            y: '-25',
+            z: '100',
+        });
+        TweenMax.to(projectDetail, 3, {
+            marginTop: '+=10%',
+        });
+        TweenMax.to(projectDescription, 3, {
+            opacity: '1',
+        });
+        TweenMax.to(colorPlayer, 3, {
+            top: '50px',
+        });
+        projectDescription.style.display='block';
+        competence.style.display='none';
+        touchableProject = false;
+    }else {
+        TweenMax.to(camera.position, 3, {
+            x: '0',
+            y: '0',
+            z: '50',
+        });
+        TweenMax.to(projectDetail, 3, {
+            marginTop: '-50px',
+        });
+        colorPlayer.style.top='auto';
+        colorPlayer.style.bottom='30px';
+        projectDescription.style.display='none';
+        competence.style.display='block';
+        projectDescription.style.opacity=0;
+        touchableProject = true;
+    }
+
+}
+
 // controls
-const controls = new OrbitControls(camera, renderer.domElement);
+// const controls = new OrbitControls(camera, renderer.domElement);
 
 
 const particles = Particles();
@@ -72,9 +126,20 @@ let animation = true;
 const animate = timestamp => {
 
     if(animation == true){
-		loadAnimation();
+        loadAnimation();
         animation = false;
     }
+
+    if (changeColor == 1) {
+        document.querySelectorAll('.white').forEach(c => {
+            c.style.color = `hsl(${hsl},50%,70%)`;
+        });
+    }else {
+        document.querySelectorAll('.white').forEach(c => {
+            c.style.color = `hsl(${hsl},100%,100%)`;
+        });
+    }
+
     if (hsl <=360) {
         document.querySelector('.psoload .center').style.borderColor=`hsl(${hsl},50%,80%)`;
         hsl+=0.5;
@@ -82,8 +147,6 @@ const animate = timestamp => {
         hsl = 0;
     }
     // stats.begin();
-    var x = document.readyState;
-    document.getElementById("chargement").innerHTML = x;
 
     renderer.render(scene, camera);
     // stats.end();

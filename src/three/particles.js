@@ -29,7 +29,7 @@ class Particle {
 	circlePoints(num) {
 		const angle = Math.random() * Math.PI * 2;
 		const minCircle = 15;
-		const maxCircle = 35;
+		const maxCircle = 30;
 		const radius = minCircle + Math.random() * (maxCircle - minCircle);
 		let delay = 8;
 

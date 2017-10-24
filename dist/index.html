@@ -8,11 +8,22 @@
 <body>
     <div class="navbar fixed">
 
-        <div class="psoload">
+        <div class="psoload index pointer" id="iconeMenu">
             <div class="center"></div>
             <div class="inner"></div>
         </div>
-        <div id="audioPlayer" class="sound soundPlaying pointer"></div>
+        <div class="menu display">
+            <div class="menu-content">
+                <div class="menu-item pointer projet1"><h3 class="white">Projet 1</h3><p class="white">Description du projet</p></div>
+                <div class="menu-item pointer projet2"><h3 class="white">Projet 2</h3><p class="white">Description du projet</p></div>
+                <div class="menu-item pointer projet3"><h3 class="white">Projet 3</h3><p class="white">Description du projet</p></div>
+                <div class="menu-item pointer projet4"><h3 class="white">Projet 4</h3><p class="white">Description du projet</p></div>
+                <div class="menu-item pointer projet5"><h3 class="white">Projet 5</h3><p class="white">Description du projet</p></div>
+                <div class="menu-item pointer projet6"><h3 class="white">Projet 6</h3><p class="white">Description du projet</p></div>
+                <div class="menu-item pointer projet7"><h3 class="white">Projet 7</h3><p class="white">Description du projet</p></div>
+            </div>
+        </div>
+        <div id="audioPlayer" class="sound soundPlaying pointer index"></div>
         <audio id="music">
             <source src="music/strobe.mp3" type="audio/mpeg" />
         </audio>
@@ -22,28 +33,16 @@
     <p class="texte competence white">front_dev</p>
 
     <div class="projet">
-        <h2 class="texte nomProjet white">Nom du projet</h2>
+        <h2 class="texte nomProjet white"></h2>
         <div class="middle" id="projectDetail">
-            <p class="white center pointer" >Création d'un site web<br>Awwwards<br>+</p>
-            <div id="projectDescription" class="white display">
-                <h4>Test</h4>
-                <p>
-                    Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-                    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla
-                    ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.
-                    Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique,
-                    sans que son contenu n'en soit modifié.
-                    Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum,
-                    et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.
-                </p>
-                <h4>Test 2</h4>
-                <p>ceci est le deuxième test</p>
-                <p class="button">FERMER</p>
-            </div>
+            <p class="white center pointer" id="accrocheProjet"></p>
+            <div id="projectDescription" class="white display"></div>
         </div>
     </div>
 
-    <div class="liens">
+    <div class="liens index">
+        <img id="next" class="next slide pointer" src="img/next.png" alt="Next slide">
+        <img id="previous" class="previous slide pointer" src="img/previous.png" alt="Previous slide">
         <a href="#" title="Codepen profil">
             <img class="codepen" src="img/codepen.png" alt="Logo codepen">
         </a>
@@ -51,6 +50,6 @@
             <img class="github" src="img/github.png" alt="Logo github">
         </a>
     </div>
-    <div id="colorPlayer" class="loader7 pointer"></div>
+    <div id="colorPlayer" class="loader7 pointer index"></div>
 <script type="text/javascript" src="bundle.js"></script></body>
 </html>

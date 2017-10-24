@@ -1,95 +1,61 @@
-html {
-    overflow-x: hidden;
-}
-canvas {display: block;}
-body {
-    background-color: #000000;
-    margin: 0;
-    padding: 0;
-}
+html { overflow-x: hidden; }
+canvas { display: block; }
+body { background-color: #000000; margin: 0; padding: 0; }
 
-.display {
-    display: none;
-    opacity: 0;
-}
-
-.center {
-    text-align: center;
-}
-
-.white {
-    color: #FFFFFF;
-    font-family: 'Bungee Hairline';
-}
-
-.middle {
-    position: absolute;
-    /*text-align: center;*/
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    height: 100px;
-    margin-top: -50px;
-    margin-left: -200px;
-}
-
-.texte{
-    position: absolute;
-    width:fit-content;
-    width:-moz-fit-content;
-    text-align: center;
-}
-
-.nomProjet {
-    margin-top: 10px;
+/*Menu*/
+.menu {
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0;
-    position: fixed;
-    margin-left: auto;
-    margin-right: auto;
+    min-width: 300px;
+    width: 100%;
+    background-color: white;
+    height: 100%;
+    padding-left: 8%;
 }
 
-.auteur {
-    bottom: 20px;
-    left: 20px;
-    font-size: medium;
-    text-orientation: upright;
-    writing-mode: tb-rl;
-    letter-spacing: 0.1px;
-    position: fixed;
-}
-
-.pointer {
-    cursor: crosshair;
-}
-
-.button {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #000000 !important;
-    background-color: #FFFFFF;
+.menu-item {
+    /*opacity: 0.7;*/
+    text-align: center;
     display: inline-block;
-    font-weight: bold;
-    font-style: italic;
-    cursor: crosshair;
-    border-radius: 5px;
+    width: 19%;
+    margin-left: 1%;
+    margin-top: 10px;
+    height: auto;
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 5px;
 }
 
-.competence {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
-    margin-bottom: 0;
-}
+/*Général*/
+.display { display: none; opacity: 0; }
+.center { text-align: center; }
+.white { color: #FFFFFF; font-family: 'Bungee Hairline'; }
+.texte { position: absolute; width:fit-content; width:-moz-fit-content; text-align: center; }
+.index { z-index: 100; }
 
+/*Projet*/
+.nomProjet { margin-top: 10px; left: 0; right: 0; position: fixed; margin-left: auto; margin-right: auto; }
+.middle { position: absolute; top: 50%; left: 50%; width: 100px; height: 100px; margin-top: -50px; margin-left: -50px; }
+
+/*Contenu textuel*/
+.auteur { bottom: 20px; left: 20px; font-size: medium; text-orientation: upright; writing-mode: tb-rl; letter-spacing: 0.1px; position: fixed; }
+.competence { bottom: 0; left: 0; right: 0; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 0; }
+
+/*Curseur souris*/
+.pointer { cursor: crosshair; }
+
+/*Boutons*/
+.button { padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px; color: #000000 !important; background-color: #FFFFFF; display: inline-block; font-weight: bold; font-style: italic; cursor: crosshair; border-radius: 3px; }
+
+
+/*Images*/
 .codepen{ position: fixed; bottom: 25px; right: 20px; width: 24px; height: 24px; }
-
 .github{ position: fixed; bottom: 60px; right: 20px; width: 24px; height: 24px; }
+.slide { position: fixed; right: 20px; width: 24px; height: 24px; }
+.next { bottom: 95px; }
+.previous { bottom: 130px; }
 
 
 /*Logo en haut à gauche*/

@@ -21,9 +21,25 @@ class Particle {
 		this.group.position.set(this.randomNumberExcluding(-50,50,-20,20), this.randomNumberExcluding(-30,30,-10,10), Math.random()*2);
 	}
 
+	randomNumberBetween(min,max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
 	randomNumberExcluding(min, max, minExcluded, maxExcluded) {
 		const num = Math.floor(Math.random() * (max - min + 1)) + min;
 		return (num >= minExcluded && num <= maxExcluded) ? this.randomNumberExcluding(min, max, minExcluded, maxExcluded) : num;
+	}
+
+	nextSlide(num) {
+		let delay = 8;
+		// Vers un point à droite de l'écran
+		TweenMax.to(this.group.position, 5, {
+			x: '50',
+			y: () => {
+				return this.randomNumberBetween(-40,40);
+			}
+		});
+
 	}
 
 	circlePoints(num) {

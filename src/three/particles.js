@@ -173,6 +173,9 @@ class Particle {
 				},
 			}).delay(delay*8);
 		}
+		const timeout2 = setTimeout(() => {
+			this.circlePoints(num);
+		}, delay*9*1000);
 
 	}
 

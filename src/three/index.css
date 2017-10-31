@@ -3,6 +3,8 @@ canvas { display: block; }
 body { background-color: #000000; margin: 0; padding: 0; }
 img { display: block; }
 h1 { margin: 0; }
+a { color: white; text-decoration: none;}
+
 
 .loading{ display: none;}
 /*Menu*/

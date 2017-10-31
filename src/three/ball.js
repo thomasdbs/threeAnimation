@@ -7,7 +7,7 @@ export default () => {
 
     const group = new THREE.Group();
 
-    const geometryBalle = new THREE.SphereGeometry(11,32,32);
+    const geometryBalle = new THREE.SphereGeometry(13,32,32);
     const balle = new THREE.Mesh(geometryBalle, material(0xFFFFFF));
     balle.position.set(0,0,0);
 

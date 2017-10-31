@@ -37,16 +37,22 @@ let animationParticles = null;
 
 const projets = {
     '1': [
-        'Ville de Nantes',
-        "Galerie photos<br>Pont d'Orléans<br>+",
-        "<h4>Test projet 1</h4><p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p><h4>Test 2</h4><p>ceci est le deuxième test</p><p class='button'>FERMER</p>",
-        "Galerie photos sur le pont d'Orléans"
+        "Ville de Nantes",
+        "Réhabilitation<br>des archives<br>+",
+        "<h4>Site web</h4><a href='https://thomasdbs.github.io/nantesHistoire/' target='_blank'>Github</a><h4>Le concept</h4><img alt='' src='img/archive.PNG' style='width:30%;margin:10px;border-radius:5px;float:right'/><p>Alors que les archives de la ville de Nantes contiennent des informations intéressantes sur l'histoire de la ville, la mise en page des articles n'est pas du tout attractive, et le premier réflexe de l'internaute est de se demander s'il ne va pas perdre son temps avec toute cette lecture. Les images qui accompagnent les articles, pourtant de belle qualité, ne sont pas du tout mises en avant. L'idée a donc été de reprendre un des articles pour le personnaliser.</p><h4>Le pont d'Orléans</h4><p>Le choix (fait au hasard) s'est porté sur le pont d'Orléans. L'analyse du texte m'a permis de mettre 3 choses en avant : la quantité importante de dates, la qualité des images et enfin le fait que ce pont ait été de nombreuses fois modifié.</p><h4>La réalisation</h4><p>Il m'a semblé important de mettre en avant les images, et de rendre le texte secondaire, pour ne pas perdre l'utilisateur. Chaque image a donc été reliée à une date, et donc à une partie du texte. L'affichage en plein écran et sans possibilité de scroll permet à l'utilisateur de se concentrer sur les informations importantes, mises au centre de l'écran. Une forte intéractivité devait être mise en place, pour créer un diaporama ludique et qui donne envie d'être parcouru. Ainsi, la description détaillée de la date n'apparait que lorsqu'on clique sur la date en question. Le travail sur les images apporte un sens au contenu de l'article. Cette déstructuration des images évoque l'histoire de ce pont maintes et maintes fois modifié. Chaque partie de l'image correspond donc à une partie de son histoire. Toujours dans cette volonté d'intéractivité, un bouton sur l'écran permet de créer une autre sorte de déstructuration, cette fois ci en utilisant les couleurs de l'image. Le menu sous forme d'horloge a été fait de sorte à évoquer une nouvelle fois l'histoire du pont d'Orléans, qui a traversé les décennies.</p><h4>Le bilan</h4><p>Cette personnalisation d'un article des archives de Nantes a été faite pour redonner de l'importance au texte et aux images. Elle replace l'utilisateur au premier plan, et l'emmène dans un musée intéractif. En espérant qu'il apprécie la visite</p><h4>Visuels</h4><img src='img/nantesHistoire.png' style='width:50%;margin-left:25%;margin-right:25%;margin-bottom:15px;border:1px solid white; border-radius:5px;' /><img src='img/nantesHistoire1.png' style='width:50%;margin-left:25%;margin-right:25%;margin-bottom:15px;border:1px solid white; border-radius:5px;' /><img src='img/nantesHistoire2.png' style='width:50%;margin-left:25%;margin-right:25%;margin-bottom:15px;border:1px solid white; border-radius:5px;' /><img src='img/nantesHistoire3.png' style='width:50%;margin-left:25%;margin-right:25%;border:1px solid white; border-radius:5px;' /><p class='button'>FERMER</p>",
+        "Réhabilitation des archives de la ville"
     ],
     '2': [
-        'Beer Pong responsable',
+        "Beer Pong responsable",
         "Jeu multi-screen<br>Prévention<br>+",
-        "<h4>Test projet 2</h4><p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p><h4>Test 2</h4><p>ceci est le deuxième test</p><p class='button'>FERMER</p>",
+        "<h4>Site web</h4><p><a href='https://thomasdbs.github.io/beerPong/' target='_blank'>Github</a>.</p><h4>Test 2</h4><p>ceci est le deuxième test</p><p class='button'>FERMER</p>",
         "Jeu multi-screen mettant en avant les dangers de l'alcool"
+    ],
+    '3': [
+        "Mystérieuses cités d'or",
+        "Animation d'images<br>en 3D<br>+",
+        "<h4>Site web</h4><p><a href='https://thomasdbs.github.io/threeMCO/' target='_blank'>Github</a>.</p><h4>Test 2</h4><p>ceci est le deuxième test</p><p class='button'>FERMER</p>",
+        "Animation d'images en 3D"
     ]
 };
 
@@ -79,7 +85,7 @@ iconeMenu.onclick = () => {
         projectDetail.style.display = 'none';
         projectDescription.style.display = 'none';
         TweenMax.to(sliderTransition.group.position, 1.5+delay, {
-            z: '38',
+            z: '35.5',
         });
         TweenMax.to(sliderTransition.group.rotation, 6.5+delay, {
             x: Math.PI,
@@ -116,6 +122,7 @@ iconeMenu.onclick = () => {
 // Fonction appelée quand on clique sur un item du menu
 projet1.onclick = () => { redirection(1); }
 projet2.onclick = () => { redirection(2); }
+projet3.onclick = () => { redirection(3); }
 
 //Fonction appelée quand on clique sur un item du menu, qui affiche le projet sélectionné
 const redirection = num => {
@@ -174,7 +181,7 @@ const colorBall = () => {
     const sliderTransition = SliderTransition();
     scene.add(sliderTransition.group);
     TweenMax.to(sliderTransition.group.position, 3+delay, {
-        z: '38',
+        z: '35.5',
     });
     TweenMax.to(sliderTransition.group.rotation, 6.5+delay, {
         x: Math.PI,
